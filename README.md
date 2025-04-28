@@ -1,5 +1,5 @@
 # Aplicativo para Marcação de Consultas Médicas
-- Aluno: Kauê Miziara
+- Aluna: Julia Victoria Santos
 - Turma: 3ECB
-- R.M.: 550451
+- R.M.: 97897
 
