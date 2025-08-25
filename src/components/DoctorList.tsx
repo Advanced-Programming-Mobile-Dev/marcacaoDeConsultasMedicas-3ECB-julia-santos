@@ -1,20 +1,23 @@
-import React from "react";
-import styled from "styled-components/native";
-import { ViewStyle } from "react-native";
-import { ListItem, Avatar } from "react-native-elements";
-import theme from "../styles/theme";
+import React from 'react';
+import styled from 'styled-components/native';
+import { ViewStyle } from 'react-native';
+import { ListItem, Avatar } from 'react-native-elements';
+import theme from '../styles/theme';
+
 interface Doctor {
   id: string;
   name: string;
   specialty: string;
   image: string;
 }
+
 interface DoctorListProps {
   doctors: Doctor[];
   onSelectDoctor: (doctor: Doctor) => void;
   selectedDoctorId?: string;
   style?: ViewStyle;
 }
+
 const DoctorList: React.FC<DoctorListProps> = ({
   doctors,
   onSelectDoctor,
@@ -39,7 +42,7 @@ const DoctorList: React.FC<DoctorListProps> = ({
             containerStyle={styles.avatar}
           />
           <ListItem.Content>
-            <ListItem.Title>{doctor.name}</ListItem.Title>
+            <ListItem.Title style={styles.name}>{doctor.name}</ListItem.Title>
             <ListItem.Subtitle style={styles.specialty}>
               {doctor.specialty}
             </ListItem.Subtitle>
@@ -50,6 +53,7 @@ const DoctorList: React.FC<DoctorListProps> = ({
     </Container>
   );
 };
+
 const styles = {
   listItem: {
     borderRadius: 8,
@@ -59,7 +63,7 @@ const styles = {
     borderColor: theme.colors.border,
   },
   selectedItem: {
-    backgroundColor: theme.colors.primary + "20",
+    backgroundColor: theme.colors.primary + '20',
     borderColor: theme.colors.primary,
   },
   avatar: {
@@ -67,7 +71,7 @@ const styles = {
   },
   name: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: theme.colors.text,
   },
   specialty: {
@@ -76,7 +80,9 @@ const styles = {
     opacity: 0.7,
   },
 };
+
 const Container = styled.View`
   margin-bottom: 15px;
 `;
-export default DoctorList;
+
+export default DoctorList; 
